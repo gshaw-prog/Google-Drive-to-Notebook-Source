@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotebookLM: Google Sheets Guide | BISP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f8fafc; 
+            color: #1e293b; 
+            line-height: 1.6;
+        }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+        
+        .container-box { @apply max-w-3xl mx-auto py-12 px-6; }
+        
+        .step-card { 
+            @apply bg-white p-10 rounded-[32px] shadow-sm border border-slate-200 mb-10 relative overflow-hidden transition-all hover:shadow-md; 
+        }
+        
+        .instruction-tag { 
+            @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-4 relative z-10; 
+        }
+        
+        .step-title { @apply text-3xl font-extrabold text-slate-900 mb-1 relative z-10; }
+        .step-subtitle { @apply text-lg font-semibold text-blue-600 mb-4 relative z-10; }
+        
+        .ui-element { 
+            @apply inline-block px-2.5 py-0.5 bg-slate-100 border border-slate-300 rounded-md text-sm font-semibold text-slate-800 mx-0.5 shadow-sm; 
+        }
+        
+        .pro-tip { 
+            @apply mt-8 p-5 bg-amber-50 rounded-2xl border border-amber-100 text-sm text-amber-900 flex gap-4 items-start relative z-10; 
+        }
+
+        .action-box {
+            @apply mt-8 p-6 bg-slate-900 rounded-2xl text-white shadow-xl relative z-10;
+        }
+
+        .list-icon { @apply w-6 h-6 flex items-center justify-center rounded-full bg-slate-100 text-xs; }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <div class="container-box">
+        <header class="mb-16 text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Connecting Your Tracker</h1>
+            <p class="text-lg text-slate-600 max-w-2xl leading-relaxed">A visual guide to bridging the gap between your Google Sheet student data and AI-powered analysis in NotebookLM.</p>
+        </header>
+
+        <!-- Step 1 -->
+        <div class="step-card">
+            <div class="instruction-tag">Preparation</div>
+            <h2 class="step-title">Structure Your Evidence</h2>
+            <h3 class="step-subtitle">Clean Your Google Sheet</h3>
+            <p class="text-slate-600 mb-4 relative z-10 leading-relaxed">
+                NotebookLM parses data hierarchically. For the most accurate analysis, ensure your top row contains explicit, descriptive headers like 
+                <span class="ui-element">Student Name</span>, 
+                <span class="ui-element">Q1: Fractions</span>, and 
+                <span class="ui-element">Total Score</span>.
+            </p>
+            <div class="pro-tip">
+                <i class="fa-solid fa-lightbulb text-amber-500 text-lg mt-0.5"></i>
+                <div>
+                    <span class="font-bold block mb-1">Teacher Tip</span>
+                    <p class="opacity-90 leading-snug text-xs">Avoid merged cells or "blank" header columns. A flat, simple table allows the AI to map every mark to the correct student instantly.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+            <div class="instruction-tag">Launch</div>
+            <h2 class="step-title">Create the Workspace</h2>
+            <h3 class="step-subtitle">Initiate a New Notebook</h3>
+            <p class="text-slate-600 mb-6 relative z-10">
+                Navigate to <a href="https://notebooklm.google.com" target="_blank" class="text-blue-600 font-semibold hover:underline">notebooklm.google.com</a>. 
+                Locate and click the large <span class="ui-element"><i class="fa-solid fa-plus mr-1.5 text-xs text-blue-600"></i> New Notebook</span> button to create a dedicated analysis environment.
+            </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+            <div class="instruction-tag">Integration</div>
+            <h2 class="step-title">Import Student Data</h2>
+            <h3 class="step-subtitle">Sync with Google Drive</h3>
+            <p class="text-slate-600 mb-6 relative z-10">Once the source menu opens, follow this sequence to connect your live data:</p>
+            
+            <div class="space-y-4 relative z-10">
+                <div class="flex items-center gap-4 group">
+                    <div class="list-icon group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors"><i class="fa-brands fa-google-drive"></i></div>
+                    <span class="text-sm font-medium text-slate-700">Select the <strong class="text-slate-900">Google Drive</strong> icon from the list.</span>
+                </div>
+                <div class="flex items-center gap-4 group">
+                    <div class="list-icon group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <span class="text-sm font-medium text-slate-700">Search for your <strong class="text-slate-900">Assessment Tracker</strong> spreadsheet.</span>
+                </div>
+                <div class="flex items-center gap-4 group">
+                    <div class="list-icon group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors"><i class="fa-solid fa-check"></i></div>
+                    <span class="text-sm font-medium text-slate-700">Select the file and click <span class="ui-element">Insert</span>.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card">
+            <div class="instruction-tag">Analysis</div>
+            <h2 class="step-title">Begin the Diagnosis</h2>
+            <h3 class="step-subtitle">Query the Evidence</h3>
+            <p class="text-slate-600 mb-2 relative z-10">
+                Your sheet will appear in the sidebar under "Sources." The AI is now "grounded" in your class data and ready for questioning.
+            </p>
+            
+            <div class="action-box">
+                <div class="flex items-center gap-2 mb-3">
+                    <i class="fa-solid fa-terminal text-blue-400 text-xs"></i>
+                    <h4 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400">Initial Diagnostic Query</h4>
+                </div>
+                <p class="font-mono text-sm leading-relaxed text-blue-100 italic">
+                    "Review the data. Which students show high scores in Fractions but a significant drop in Decimal Place Value? Group them for an intervention."
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
